@@ -1,0 +1,80 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+
+Description: >
+  IaC for AVP
+
+Resources:
+  PolicyStore:
+    Type: AWS::VerifiedPermissions::PolicyStore
+    Properties:
+      Description: "Policy store for the documents scenario"
+      ValidationSettings:
+        Mode: STRICT
+      Schema:
+        CedarJson: |
+          {
+            "DocumentManagementPlatform": {
+              "entityTypes": {
+                "User": {
+                  "shape": {
+                    "type": "Record",
+                    "attributes": {}
+                  }
+                },
+                "Document": {
+                  "shape": {
+                    "type": "Record",
+                    "attributes": {}
+                  }
+                }
+              },
+              "actions": {
+                "View": {
+                  "appliesTo": {
+                    "principalTypes": ["User"],
+                    "resourceTypes": ["Document"]
+                  }
+                },
+                "Edit": {
+                  "appliesTo": {
+                    "principalTypes": ["User"],
+                    "resourceTypes": ["Document"]
+                  }
+                }
+              }
+            }
+          }
+
+  AllowPolicy:
+    Type: AWS::VerifiedPermissions::Policy
+    Properties:
+      PolicyStoreId: !Ref PolicyStore
+      Definition:
+        Static:
+          Description: "Allow all users to view all documents"
+          Statement: |
+            permit (
+                principal,
+                action in [DocumentManagementPlatform::Action::"View"],
+                resource
+            );
+
+  DenyPolicy:
+    Type: AWS::VerifiedPermissions::Policy
+    Properties:
+      PolicyStoreId: !Ref PolicyStore
+      Definition:
+        Static:
+          Description: "Forbid user X from viewing any documents"
+          Statement: |
+            forbid(
+              principal == DocumentManagementPlatform::User::"xyz",
+              action in [DocumentManagementPlatform::Action::"View"],
+              resource
+            );
+
+Outputs:
+  PolicyStoreId:
+    Description: "Identifier of the Amazon Verified Permissions policy store."
+    Value: !Ref PolicyStore
