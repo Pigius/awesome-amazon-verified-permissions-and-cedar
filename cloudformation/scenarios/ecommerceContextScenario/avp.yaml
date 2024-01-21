@@ -1,0 +1,89 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+
+Description: >
+  IaC for AVP
+
+Resources:
+  PolicyStore:
+    Type: AWS::VerifiedPermissions::PolicyStore
+    Properties:
+      Description: "Policy store for the Context Scenario created via Cloudformation"
+      ValidationSettings:
+        Mode: STRICT
+      Schema:
+        CedarJson: |
+          {
+              "EcommercePlatform":{
+                  "entityTypes":{
+                      "Customer":{
+                      "shape":{
+                          "type":"Record",
+                          "attributes":{
+                              
+                          }
+                      }
+                      },
+                      "Product":{
+                      "shape":{
+                          "type":"Record",
+                          "attributes":{
+                              
+                          }
+                      }
+                      }
+                  },
+                  "actions":{
+                      "View":{
+                      "appliesTo":{
+                          "principalTypes":[
+                              "Customer"
+                          ],
+                          "resourceTypes":[
+                              "Product"
+                          ],
+                          "context":{
+                              "type":"Record",
+                              "attributes":{
+                                  "region":{
+                                  "name":"region",
+                                  "type":"String",
+                                  "required":true
+                                  }
+                              }
+                          }
+                      }
+                      },
+                      "Edit":{
+                      "appliesTo":{
+                          "principalTypes":[
+                              "Customer"
+                          ],
+                          "resourceTypes":[
+                              "Product"
+                          ]
+                      }
+                      }
+                  }
+              }
+          }
+
+  AllowPolicy1:
+    Type: AWS::VerifiedPermissions::Policy
+    Properties:
+      PolicyStoreId: !Ref PolicyStore
+      Definition:
+        Static:
+          Description: "Allow viewing of products for customers in the US region"
+          Statement: |
+            permit(
+              principal,
+              action in [EcommercePlatform::Action::"View"],
+              resource
+              ) when {
+              context.region == "US"
+            };
+Outputs:
+  PolicyStoreId:
+    Description: "Identifier of the Amazon Verified Permissions policy store."
+    Value: !Ref PolicyStore

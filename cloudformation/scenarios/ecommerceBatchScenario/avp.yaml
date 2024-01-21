@@ -8,7 +8,7 @@ Resources:
   PolicyStore:
     Type: AWS::VerifiedPermissions::PolicyStore
     Properties:
-      Description: "Policy store for the Ecommerce with Batch Scenario"
+      Description: "Policy store for the Ecommerce with Batch Scenario created via Cloudformation"
       ValidationSettings:
         Mode: STRICT
       Schema:

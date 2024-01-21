@@ -8,7 +8,7 @@ Resources:
   PolicyStore:
     Type: AWS::VerifiedPermissions::PolicyStore
     Properties:
-      Description: "Policy store for the documents scenario"
+      Description: "Policy store for the documents scenario created via Cloudformation"
       ValidationSettings:
         Mode: STRICT
       Schema:

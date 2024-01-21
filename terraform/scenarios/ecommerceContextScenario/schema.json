@@ -1,0 +1,54 @@
+{
+   "EcommercePlatform":{
+      "entityTypes":{
+         "Customer":{
+            "shape":{
+               "type":"Record",
+               "attributes":{
+                  
+               }
+            }
+         },
+         "Product":{
+            "shape":{
+               "type":"Record",
+               "attributes":{
+                  
+               }
+            }
+         }
+      },
+      "actions":{
+         "View":{
+            "appliesTo":{
+               "principalTypes":[
+                  "Customer"
+               ],
+               "resourceTypes":[
+                  "Product"
+               ],
+               "context":{
+                  "type":"Record",
+                  "attributes":{
+                     "region":{
+                        "name":"region",
+                        "type":"String",
+                        "required":true
+                     }
+                  }
+               }
+            }
+         },
+         "Edit":{
+            "appliesTo":{
+               "principalTypes":[
+                  "Customer"
+               ],
+               "resourceTypes":[
+                  "Product"
+               ]
+            }
+         }
+      }
+   }
+}
