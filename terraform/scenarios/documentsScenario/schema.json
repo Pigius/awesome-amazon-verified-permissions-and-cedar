@@ -1,0 +1,40 @@
+{
+    "DocumentManagementPlatform": {
+        "entityTypes": {
+            "User": {
+                "shape": {
+                    "type": "Record",
+                    "attributes": {}
+                }
+            },
+            "Document": {
+                "shape": {
+                    "type": "Record",
+                    "attributes": {}
+                }
+            }
+        },
+        "actions": {
+            "View": {
+                "appliesTo": {
+                    "principalTypes": [
+                        "User"
+                    ],
+                    "resourceTypes": [
+                        "Document"
+                    ]
+                }
+            },
+            "Edit": {
+                "appliesTo": {
+                    "principalTypes": [
+                        "User"
+                    ],
+                    "resourceTypes": [
+                        "Document"
+                    ]
+                }
+            }
+        }
+    }
+}

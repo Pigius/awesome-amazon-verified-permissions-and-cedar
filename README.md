@@ -50,15 +50,26 @@ These resources are ideal for newcomers to understand, set up, and effectively m
 
 ...
 
+### Projects
+
+| Link                                                                                                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [avp-petstore-sample-v2](https://github.com/aws-samples/avp-petstore-sample-v2)                                | This application uses Amazon Cognito for authentication and uses Amazon Verified Permissions for policy-based authorization, the application uses Amplify platform to accelerate deployment and provisioning of backend resources.                                                                                                                                                                                                       |
+| [Bookstore Demo Application with Authorization](https://github.com/build-on-aws/bookstore-demo-app-with-authz) | It contains a sample application that demonstrates how you could add authorization layer using Amazon Verified Permissions and Cedar policy language. The backend as a serverless application, written in Python and exposed as a REST API, making use of Amazon API Gateway, AWS Lambda, and Amazon Cognito. The frontend is a Vue.js application using the AWS Amplify SDK for authentication and communication with the provided API. |
+| [amazon-verifiedpermissions-cache-sample](https://github.com/build-on-aws/bookstore-demo-app-with-authz)       | Amazon Verified Permissions Cache sample caches auhthz responses to reduce response time and cost of invoking AVP API.                                                                                                                                                                                                                                                                                                                   |
+
+...
+
 ### Videos
 
 If you're just beginning with Amazon Verified Permissions, these resources will provide the foundational knowledge and steps to get started quickly.
 
-| Link                                                                                                                                                             | Description                                                                                                                                                                                                                                                                                                                                         |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [AWS re:Invent 2022 - [NEW] Use policies to manage permissions w/Amazon Verified Permissions (SEC335)](https://www.youtube.com/watch?v=k6pPcnLuOXY)              | Join us in this session to learn how policy-based permissions can be applied to your applications using Amazon Verified Permissions, and discover how this fits into the end-to-end journey of application authentication, authorization, and fine-grained access control.                                                                          |
-| [AWS re:Inforce 2023 - Fine-grained authorization for apps with Amazon Verified Permissions (IAM308)](https://www.youtube.com/watch?v=1AdkZJSmTQI)               | Learn how to scope a permissions model based on principals, actions, resources, and context, and how to define attribute- and role-based policies using the Cedar language. The session also covers integration models with identity providers and services such as Amazon API Gateway.                                                             |
-| [AWS re:Invent 2023 - How to use Amazon Verified Permissions for authorization inside apps (SEC241)](https://www.youtube.com/watch?v=ptzb-oBwjxM&themeRefresh=1) | Join this session to learn about new features for Verified Permissions that further simplify schema editing and policy analysis. Also explore how these features help developers batch authorize actions and resources simultaneously, further reducing latency and making it more cost-effective for AWS users to externalize their authorization. |
+| Link                                                                                                                                                | Description                                                                                                                                                                                                                                                                                                                                         |
+| --------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [AWS re:Invent 2022 - [NEW] Use policies to manage permissions w/Amazon Verified Permissions (SEC335)](https://www.youtube.com/watch?v=k6pPcnLuOXY) | Join us in this session to learn how policy-based permissions can be applied to your applications using Amazon Verified Permissions, and discover how this fits into the end-to-end journey of application authentication, authorization, and fine-grained access control.                                                                          |
+| [AWS re:Inforce 2023 - Fine-grained authorization for apps with Amazon Verified Permissions (IAM308)](https://www.youtube.com/watch?v=1AdkZJSmTQI)  | Learn how to scope a permissions model based on principals, actions, resources, and context, and how to define attribute- and role-based policies using the Cedar language. The session also covers integration models with identity providers and services such as Amazon API Gateway.                                                             |
+| [AWS re:Invent 2023 - How to use Amazon Verified Permissions for authorization inside apps (SEC241)](https://www.youtube.com/watch?v=ptzb-oBwjxM)   | Join this session to learn about new features for Verified Permissions that further simplify schema editing and policy analysis. Also explore how these features help developers batch authorize actions and resources simultaneously, further reducing latency and making it more cost-effective for AWS users to externalize their authorization. |
+| [AWS On Air ft. Amazon Verified Permissions](https://www.youtube.com/watch?v=cyQkhud9Cf4)                                                           | AWS On Air ft. Amazon Verified Permissions.                                                                                                                                                                                                                                                                                                         |
 
 ...
 
@@ -82,3 +93,58 @@ Cedar is the policy language used within AVP for crafting fine-grained, attribut
 | [Cedar security](https://docs.cedarpolicy.com/other/security.html)                                                                                                                    | information about security as it relates to the Cedar policy language                          |
 
 ...
+
+## Community Resources
+
+Below is a list of resources created by the Community.
+
+## AVP
+
+### Blogposts
+
+| Link                                                                                                                                                    | Description                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| [Series of blog posts from Daniel on dev.to about AVP](https://dev.to/aws-builders/authorization-and-cedar-a-new-way-to-manage-permissions-part-i-1nid) | Multiple blogposts about AVP/Cedar. Full of explanations, tutorials, examples, blueprints. |
+
+...
+
+### Tools/Projects
+
+| Link                                         | Description                                                                |
+| -------------------------------------------- | -------------------------------------------------------------------------- |
+| [AVP-CLI](https://github.com/Pigius/avp-cli) | Tool for easing out the start with Amazon Verified Permissions (and Cedar) |
+
+Supports all actions available in Amazon Verified Permissions
+Predefined blueprints with tests for different authorization scenarios that can be deployed to AWS
+|
+
+...
+
+### Videos
+
+If you're just beginning with Amazon Verified Permissions, these resources will provide the foundational knowledge and steps to get started quickly.
+
+| Link                                                                                                                                                 | Description                                                                                                                                                                        |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [AWS re:Invent 2023 - Build verifiable and effective application authorization in 40 minutes (BOA209))](https://www.youtube.com/watch?v=QowiJZk_I30) | Learn how, with the help of Cedar and Amazon Verified Permissions, to add those capabilities to a nontrivial web application in 40 minutes, including some ABAC and RBAC examples. |
+
+...
+
+## Cedar
+
+| Link                                                   | Description                                             |
+| ------------------------------------------------------ | ------------------------------------------------------- |
+| [cedar-agent](https://github.com/permitio/cedar-agent) | Cedar-agent is the easiest way to deploy and run Cedar. |
+|                                                        |
+
+...
+
+## Contributing
+
+Contributions are what make the open-source community an amazing place to learn, inspire, and create. Any contributions you make to the `avp-resources` repository are **greatly appreciated**.
+
+If you have a suggestion that would make this repository better, have additional resources to share, or want to contribute your own insights or materials, please don't hesitate to:
+
+- Create pull request.
+- Or **raise an issue**. Also if something is missing and you would like to see some kind of tutorial.
+- You can also ping me on Linkedin for direct communication.
