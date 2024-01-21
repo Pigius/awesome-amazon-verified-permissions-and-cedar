@@ -1,0 +1,50 @@
+{
+    "EcommercePlatform": {
+        "entityTypes": {
+            "Product": {
+                "shape": {
+                    "type": "Record",
+                    "attributes": {}
+                }
+            },
+            "Seller": {
+                "shape": {
+                    "type": "Record",
+                    "attributes": {}
+                }
+            }
+        },
+        "actions": {
+            "List": {
+                "appliesTo": {
+                    "principalTypes": [
+                        "Seller"
+                    ],
+                    "resourceTypes": [
+                        "Product"
+                    ]
+                }
+            },
+            "Remove": {
+                "appliesTo": {
+                    "principalTypes": [
+                        "Seller"
+                    ],
+                    "resourceTypes": [
+                        "Product"
+                    ]
+                }
+            },
+            "Update": {
+                "appliesTo": {
+                    "resourceTypes": [
+                        "Product"
+                    ],
+                    "principalTypes": [
+                        "Seller"
+                    ]
+                }
+            }
+        }
+    }
+}

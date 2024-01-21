@@ -7,7 +7,7 @@ Resources:
   PolicyStore:
     Type: AWS::VerifiedPermissions::PolicyStore
     Properties:
-      Description: "Policy store for the Group Scenario created via Cloudformation"
+      Description: "Policy store for the Policy Template Scenario, created via Cloudformation"
       ValidationSettings:
         Mode: STRICT
       Schema:
@@ -15,67 +15,47 @@ Resources:
           {
               "EcommercePlatform": {
                   "entityTypes": {
-                      "CustomerGroup": {
-                          "shape": {
-                              "type": "Record",
-                              "attributes": {}
-                          }
-                      },
                       "Product": {
                           "shape": {
                               "type": "Record",
                               "attributes": {}
                           }
                       },
-                      "Customer": {
+                      "Seller": {
                           "shape": {
-                              "attributes": {},
-                              "type": "Record"
-                          },
-                          "memberOfTypes": [
-                              "CustomerGroup"
-                          ]
+                              "type": "Record",
+                              "attributes": {}
+                          }
                       }
                   },
                   "actions": {
-                      "Create": {
-                          "appliesTo": {
-                              "resourceTypes": [
-                                  "Product"
-                              ],
-                              "principalTypes": [
-                                  "Customer"
-                              ]
-                          }
-                      },
-                      "Preorder": {
-                          "appliesTo": {
-                              "resourceTypes": [
-                                  "Product"
-                              ],
-                              "principalTypes": [
-                                  "Customer",
-                                  "CustomerGroup"
-                              ]
-                          }
-                      },
-                      "Delete": {
+                      "List": {
                           "appliesTo": {
                               "principalTypes": [
-                                  "Customer"
+                                  "Seller"
                               ],
                               "resourceTypes": [
                                   "Product"
                               ]
                           }
                       },
-                      "View": {
+                      "Remove": {
                           "appliesTo": {
                               "principalTypes": [
-                                  "Customer"
+                                  "Seller"
                               ],
                               "resourceTypes": [
                                   "Product"
+                              ]
+                          }
+                      },
+                      "Update": {
+                          "appliesTo": {
+                              "resourceTypes": [
+                                  "Product"
+                              ],
+                              "principalTypes": [
+                                  "Seller"
                               ]
                           }
                       }
@@ -83,19 +63,33 @@ Resources:
               }
           }
 
-  AllowPolicy1:
+  PolicyTemplate:
+    Type: AWS::VerifiedPermissions::PolicyTemplate
+    Properties:
+      PolicyStoreId: !Ref PolicyStore
+      Description: "Policy template that allows a seller to list a product"
+      Statement: |
+        permit (
+            principal == ?principal,
+            action in [
+                EcommercePlatform::Action::"List"
+            ],
+            resource == ?resource
+        );
+
+  TemplateLinkedPolicy:
     Type: AWS::VerifiedPermissions::Policy
     Properties:
       PolicyStoreId: !Ref PolicyStore
       Definition:
-        Static:
-          Description: "Allow viewing of products for customers in the US region"
-          Statement: |
-            permit (
-                principal in EcommercePlatform::CustomerGroup::"VIP",
-                action in [EcommercePlatform::Action::"Preorder"],
-                resource
-            );
+        TemplateLinked:
+          PolicyTemplateId: !Ref PolicyTemplate
+          Principal:
+            EntityType: "EcommercePlatform::Seller"
+            EntityId: "123"
+          Resource:
+            EntityType: "EcommercePlatform::Product"
+            EntityId: "456"
 Outputs:
   PolicyStoreId:
     Description: "Identifier of the Amazon Verified Permissions policy store."
