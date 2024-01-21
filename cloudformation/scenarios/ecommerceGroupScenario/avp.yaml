@@ -1,0 +1,103 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+
+Description: >
+  IaC for AVP
+
+Resources:
+  PolicyStore:
+    Type: AWS::VerifiedPermissions::PolicyStore
+    Properties:
+      Description: "Policy store for the Group Scenario created via Cloudformation"
+      ValidationSettings:
+        Mode: STRICT
+      Schema:
+        CedarJson: |
+          {
+              "EcommercePlatform": {
+                  "entityTypes": {
+                      "CustomerGroup": {
+                          "shape": {
+                              "type": "Record",
+                              "attributes": {}
+                          }
+                      },
+                      "Product": {
+                          "shape": {
+                              "type": "Record",
+                              "attributes": {}
+                          }
+                      },
+                      "Customer": {
+                          "shape": {
+                              "attributes": {},
+                              "type": "Record"
+                          },
+                          "memberOfTypes": [
+                              "CustomerGroup"
+                          ]
+                      }
+                  },
+                  "actions": {
+                      "Create": {
+                          "appliesTo": {
+                              "resourceTypes": [
+                                  "Product"
+                              ],
+                              "principalTypes": [
+                                  "Customer"
+                              ]
+                          }
+                      },
+                      "Preorder": {
+                          "appliesTo": {
+                              "resourceTypes": [
+                                  "Product"
+                              ],
+                              "principalTypes": [
+                                  "Customer",
+                                  "CustomerGroup"
+                              ]
+                          }
+                      },
+                      "Delete": {
+                          "appliesTo": {
+                              "principalTypes": [
+                                  "Customer"
+                              ],
+                              "resourceTypes": [
+                                  "Product"
+                              ]
+                          }
+                      },
+                      "View": {
+                          "appliesTo": {
+                              "principalTypes": [
+                                  "Customer"
+                              ],
+                              "resourceTypes": [
+                                  "Product"
+                              ]
+                          }
+                      }
+                  }
+              }
+          }
+
+  AllowPolicy1:
+    Type: AWS::VerifiedPermissions::Policy
+    Properties:
+      PolicyStoreId: !Ref PolicyStore
+      Definition:
+        Static:
+          Description: "Allow viewing of products for customers in the US region"
+          Statement: |
+            permit (
+                principal in EcommercePlatform::CustomerGroup::"VIP",
+                action in [EcommercePlatform::Action::"Preorder"],
+                resource
+            );
+Outputs:
+  PolicyStoreId:
+    Description: "Identifier of the Amazon Verified Permissions policy store."
+    Value: !Ref PolicyStore

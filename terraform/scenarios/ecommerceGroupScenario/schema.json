@@ -1,0 +1,70 @@
+{
+    "EcommercePlatform": {
+        "entityTypes": {
+            "CustomerGroup": {
+                "shape": {
+                    "type": "Record",
+                    "attributes": {}
+                }
+            },
+            "Product": {
+                "shape": {
+                    "type": "Record",
+                    "attributes": {}
+                }
+            },
+            "Customer": {
+                "shape": {
+                    "attributes": {},
+                    "type": "Record"
+                },
+                "memberOfTypes": [
+                    "CustomerGroup"
+                ]
+            }
+        },
+        "actions": {
+            "Create": {
+                "appliesTo": {
+                    "resourceTypes": [
+                        "Product"
+                    ],
+                    "principalTypes": [
+                        "Customer"
+                    ]
+                }
+            },
+            "Preorder": {
+                "appliesTo": {
+                    "resourceTypes": [
+                        "Product"
+                    ],
+                    "principalTypes": [
+                        "Customer",
+                        "CustomerGroup"
+                    ]
+                }
+            },
+            "Delete": {
+                "appliesTo": {
+                    "principalTypes": [
+                        "Customer"
+                    ],
+                    "resourceTypes": [
+                        "Product"
+                    ]
+                }
+            },
+            "View": {
+                "appliesTo": {
+                    "principalTypes": [
+                        "Customer"
+                    ],
+                    "resourceTypes": [
+                        "Product"
+                    ]
+                }
+            }
+        }
+    }
+}
