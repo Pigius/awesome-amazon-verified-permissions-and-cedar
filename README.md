@@ -36,6 +36,7 @@ If you're just beginning with Amazon Verified Permissions, these resources will 
 | [What is AVP?](https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/what-is-avp.html)                         | Overview and core concepts of Amazon Verified Permissions (User Guide). |
 | [Getting Started with AVP](https://aws.amazon.com/verified-permissions/getting-started/)                                  | Detailed instructions for setting up AVP and creating policies.         |
 | [AVP and AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/AWS_VerifiedPermissions.html) | How to manage AVP resources using AWS CloudFormation.                   |
+| [API Reference Guide](https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/Welcome.html)                   | Amazon Verified Permissions API Reference Guide.                        |
 | [AVP Cost Calculator](https://calculator.aws/#/createCalculator/amazonVerifiedPermissions)                                | Tool for estimating the cost of using Amazon Verified Permissions.      |
 
 These resources are ideal for newcomers to understand, set up, and effectively manage permissions through AVP, as well as to estimate the associated costs.
@@ -44,17 +45,19 @@ These resources are ideal for newcomers to understand, set up, and effectively m
 
 ### SDKs and CLI
 
-For developers who prefer to interact programmatically with Amazon Verified Permissions, here are the links to SDKs for various programming languages and the AWS CLI:
+Developers can utilize various language-specific SDKs or the AWS CLI to programmatically interact with Amazon Verified Permissions.
 
-| SDK / CLI                                                                                                                              | Description                                                                                                  |
-| -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| [AWS SDK for Ruby](https://docs.aws.amazon.com/sdk-for-ruby/v3/api/Aws/VerifiedPermissions/Client.html)                                | Official AWS SDK for Ruby offering access to Amazon Verified Permissions services.                           |
-| [AWS SDK for .Net](https://docs.aws.amazon.com/sdkfornet/v3/apidocs/items/VerifiedPermissions/NVerifiedPermissions.html)               | Official AWS SDK for .Net enabling .NET developers to work with Amazon Verified Permissions.                 |
-| [AWS SDK for Java](https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/verifiedpermissions/package-summary.html) | Amazon Verified Permissions client library for Java applications.                                            |
-| [AWS SDK for JavaScript](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/client/verifiedpermissions/)                           | JavaScript SDK for interacting with Amazon Verified Permissions in browser scripts and Node.js applications. |
-| [AWS SDK for Rust](https://docs.rs/aws-sdk-verifiedpermissions/latest/aws_sdk_verifiedpermissions/)                                    | Use this Rust SDK to manage Amazon Verified Permissions within Rust applications.                            |
-| [AWS SDK for Python (Boto3)](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/verifiedpermissions.html)      | Boto3 package allows Python developers to write software that makes use of Amazon Verified Permissions.      |
-| [AWS CLI for Verified Permissions](https://docs.aws.amazon.com/cli/latest/reference/verifiedpermissions/)                              | AWS CLI command reference for Amazon Verified Permissions provides direct access from the terminal.          |
+| SDK / CLI                                                                                                                                                                | Description                                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| [AWS SDK for Ruby](https://docs.aws.amazon.com/sdk-for-ruby/v3/api/Aws/VerifiedPermissions/Client.html)                                                                  | Official AWS SDK for Ruby offering access to Amazon Verified Permissions services.                                              |
+| [AWS SDK for .Net](https://docs.aws.amazon.com/sdkfornet/v3/apidocs/items/VerifiedPermissions/NVerifiedPermissions.html)                                                 | Official AWS SDK for .Net enabling .NET developers to work with Amazon Verified Permissions.                                    |
+| [AWS SDK for Java](https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/verifiedpermissions/package-summary.html)                                   | Amazon Verified Permissions client library for Java applications.                                                               |
+| [AWS SDK for JavaScript](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/client/verifiedpermissions/)                                                             | JavaScript SDK for interacting with Amazon Verified Permissions in browser scripts and Node.js applications.                    |
+| [AWS SDK for Rust](https://docs.rs/aws-sdk-verifiedpermissions/latest/aws_sdk_verifiedpermissions/)                                                                      | Use this Rust SDK to manage Amazon Verified Permissions within Rust applications.                                               |
+| [AWS SDK for Python (Boto3)](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/verifiedpermissions.html)                                        | Boto3 package allows Python developers to write software that makes use of Amazon Verified Permissions.                         |
+| [AWS SDK for C++](https://sdk.amazonaws.com/cpp/api/LATEST/aws-cpp-sdk-verifiedpermissions/html/class_aws_1_1_verified_permissions_1_1_verified_permissions_client.html) | Amazon Verified Permissions client library for C++ applications.                                                                |
+| [AWS SDK for PHP](https://docs.aws.amazon.com/aws-sdk-php/v3/api/api-verifiedpermissions-2021-12-01.html)                                                                | PHP SDK for Amazon Verified Permissions allows PHP developers to manage permissions and use AVP services in their applications. |
+| [AWS CLI for Verified Permissions](https://docs.aws.amazon.com/cli/latest/reference/verifiedpermissions/)                                                                | AWS CLI command reference for Amazon Verified Permissions provides direct access from the terminal.                             |
 
 ...
 
