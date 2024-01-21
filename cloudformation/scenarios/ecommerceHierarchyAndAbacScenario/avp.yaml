@@ -1,0 +1,97 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+
+Description: >
+  IaC for AVP
+
+Resources:
+  PolicyStore:
+    Type: AWS::VerifiedPermissions::PolicyStore
+    Properties:
+      Description: "Policy store for the Hierarchy and ABAC Scenario, created via Cloudformation"
+      ValidationSettings:
+        Mode: STRICT
+      Schema:
+        CedarJson: |
+          {
+              "EcommercePlatform": {
+                  "entityTypes": {
+                      "Department": {
+                          "shape": {
+                              "attributes": {
+                                  "name": {
+                                      "type": "String"
+                                  }
+                              },
+                              "type": "Record"
+                          }
+                      },
+                      "Seller": {
+                          "shape": {
+                              "type": "Record",
+                              "attributes": {
+                                  "rating": {
+                                      "type": "Long"
+                                  },
+                                  "department": {
+                                      "name": "Department",
+                                      "type": "Entity"
+                                  }
+                              }
+                          }
+                      },
+                      "Car": {
+                          "shape": {
+                              "attributes": {
+                                  "price": {
+                                      "type": "Long"
+                                  },
+                                  "department": {
+                                      "name": "Department",
+                                      "type": "Entity"
+                                  }
+                              },
+                              "type": "Record"
+                          }
+                      }
+                  },
+                  "actions": {
+                      "Sell": {
+                          "appliesTo": {
+                              "resourceTypes": [
+                                  "Car"
+                              ],
+                              "principalTypes": [
+                                  "Seller"
+                              ]
+                          }
+                      }
+                  }
+              }
+          }
+
+  AllowPolicy1:
+    Type: AWS::VerifiedPermissions::Policy
+    Properties:
+      PolicyStoreId: !Ref PolicyStore
+      Definition:
+        Static:
+          Description: "Allows sellers to sell car if department matches the car's department"
+          Statement: |
+            permit (
+                principal,
+                action in [EcommercePlatform::Action::"Sell"],
+                resource
+            )
+            when
+            {
+                principal.department == resource.department &&
+                principal.department.name == "luxury" &&
+                principal.rating >= 8 &&
+                resource.price > 1000000 
+            };
+
+Outputs:
+  PolicyStoreId:
+    Description: "Identifier of the Amazon Verified Permissions policy store."
+    Value: !Ref PolicyStore

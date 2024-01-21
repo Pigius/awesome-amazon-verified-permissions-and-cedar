@@ -1,0 +1,56 @@
+{
+    "EcommercePlatform": {
+        "entityTypes": {
+            "Department": {
+                "shape": {
+                    "attributes": {
+                        "name": {
+                            "type": "String"
+                        }
+                    },
+                    "type": "Record"
+                }
+            },
+            "Seller": {
+                "shape": {
+                    "type": "Record",
+                    "attributes": {
+                        "rating": {
+                            "type": "Long"
+                        },
+                        "department": {
+                            "name": "Department",
+                            "type": "Entity"
+                        }
+                    }
+                }
+            },
+            "Car": {
+                "shape": {
+                    "attributes": {
+                        "price": {
+                            "type": "Long"
+                        },
+                        "department": {
+                            "name": "Department",
+                            "type": "Entity"
+                        }
+                    },
+                    "type": "Record"
+                }
+            }
+        },
+        "actions": {
+            "Sell": {
+                "appliesTo": {
+                    "resourceTypes": [
+                        "Car"
+                    ],
+                    "principalTypes": [
+                        "Seller"
+                    ]
+                }
+            }
+        }
+    }
+}
