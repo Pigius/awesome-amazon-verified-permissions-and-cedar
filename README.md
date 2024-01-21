@@ -38,7 +38,38 @@ If you're just beginning with Amazon Verified Permissions, these resources will 
 | [AVP and AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/AWS_VerifiedPermissions.html) | How to manage AVP resources using AWS CloudFormation.                   |
 | [AVP Cost Calculator](https://calculator.aws/#/createCalculator/amazonVerifiedPermissions)                                | Tool for estimating the cost of using Amazon Verified Permissions.      |
 
-These resources are ideal for newcomers to understand, set up, and effectively manage permissions through AVP, as well as to estimate the associated costs. Exploit these links as a springboard into the capabilities AVP offers.
+These resources are ideal for newcomers to understand, set up, and effectively manage permissions through AVP, as well as to estimate the associated costs.
+
+...
+
+### SDKs and CLI
+
+For developers who prefer to interact programmatically with Amazon Verified Permissions, here are the links to SDKs for various programming languages and the AWS CLI:
+
+| SDK / CLI                                                                                                                              | Description                                                                                                  |
+| -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| [AWS SDK for Ruby](https://docs.aws.amazon.com/sdk-for-ruby/v3/api/Aws/VerifiedPermissions/Client.html)                                | Official AWS SDK for Ruby offering access to Amazon Verified Permissions services.                           |
+| [AWS SDK for .Net](https://docs.aws.amazon.com/sdkfornet/v3/apidocs/items/VerifiedPermissions/NVerifiedPermissions.html)               | Official AWS SDK for .Net enabling .NET developers to work with Amazon Verified Permissions.                 |
+| [AWS SDK for Java](https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/verifiedpermissions/package-summary.html) | Amazon Verified Permissions client library for Java applications.                                            |
+| [AWS SDK for JavaScript](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/client/verifiedpermissions/)                           | JavaScript SDK for interacting with Amazon Verified Permissions in browser scripts and Node.js applications. |
+| [AWS SDK for Rust](https://docs.rs/aws-sdk-verifiedpermissions/latest/aws_sdk_verifiedpermissions/)                                    | Use this Rust SDK to manage Amazon Verified Permissions within Rust applications.                            |
+| [AWS SDK for Python (Boto3)](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/verifiedpermissions.html)      | Boto3 package allows Python developers to write software that makes use of Amazon Verified Permissions.      |
+| [AWS CLI for Verified Permissions](https://docs.aws.amazon.com/cli/latest/reference/verifiedpermissions/)                              | AWS CLI command reference for Amazon Verified Permissions provides direct access from the terminal.          |
+
+...
+
+### Blogposts
+
+| Link                                                                                                                                                                                                                              | Description                                                                                                                                |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| [Manage Roles and Entitlements with PBAC Using Amazon Verified Permissions](https://aws.amazon.com/blogs/devops/manage-roles-and-entitlements-with-pbac-using-amazon-verified-permissions/)                                       | Learn how to manage roles and entitlements policy-based access control (PBAC) with Amazon Verified Permissions.                            |
+| [Custom Authorization Policy Provider for ASP.NET Core with AVP](https://aws.amazon.com/blogs/dotnet/implement-a-custom-authorization-policy-provider-for-asp-net-core-apps-using-amazon-verified-permissions/)                   | Implement custom authorization in ASP.NET Core applications using Amazon Verified Permissions.                                             |
+| [Policy-Based Access Control in Application Development with AVP](https://aws.amazon.com/blogs/devops/policy-based-access-control-in-application-development-with-amazon-verified-permissions/)                                   | An exploration of policy-based access control during application development leveraging Amazon Verified Permissions.                       |
+| [Fine-Grained Authorization with Strata and Amazon Verified Permissions](https://aws.amazon.com/blogs/apn/applying-fine-grained-authorization-to-legacy-apps-with-strata-identity-orchestration-and-amazon-verified-permissions/) | A guide to implementing fine-grained authorization in legacy applications using Strata identity orchestration.                             |
+| [Controlling Access to Amazon API Gateway with CyberArk and AVP](https://aws.amazon.com/blogs/apn/controlling-access-to-amazon-api-gateway-with-cyberark-identity-and-amazon-verified-permissions/)                               | See how to control access to Amazon API Gateway using CyberArk Identity coupled with Amazon Verified Permissions.                          |
+| [Risk-Based Fine-Grained Authorization with Transmit Security](https://aws.amazon.com/blogs/apn/risk-based-fine-grained-authorization-with-transmit-security-and-amazon-verified-permissions/)                                    | Learn about integrating risk-based fine-grained authorization with Transmit Security's platform and Amazon Verified Permissions.           |
+| [Authorization Simplification with AVP and Amazon Cognito](https://aws.amazon.com/blogs/security/simplify-fine-grained-authorization-with-amazon-verified-permissions-and-amazon-cognito/)                                        | Simplify fine-grained authorization in your applications with the integration of Amazon Verified Permissions and Amazon Cognito.           |
+| [Amazon Verified Permissions – General Availability Announcement](https://aws.amazon.com/blogs/aws/simplify-how-you-manage-authorization-in-your-applications-with-amazon-verified-permissions-now-generally-available/)          | Announcement about Amazon Verified Permissions general availability, demonstrating how it simplifies application authorization management. |
 
 ...
 
