@@ -18,8 +18,8 @@ To start, take a moment to peruse the [AVP User Guide](https://aws.amazon.com/ve
 
 The repository is organized into specific sections for ease of navigation:
 
-- `cloudformation/`: AWS CloudFormation templates for AVP.
-- `terraform/`: Terraform examples for AVP.
+- `cloudformation/`: AWS CloudFormation templates for AVP. Read readme over there.
+- `terraform/`: Terraform examples for AVP. Read readme over there.
 
 ## Official Resources
 

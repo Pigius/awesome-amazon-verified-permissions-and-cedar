@@ -1,0 +1,123 @@
+{
+    "EcommerceStore": {
+        "actions": {
+            "View": {
+                "appliesTo": {
+                    "resourceTypes": [
+                        "Product"
+                    ],
+                    "principalTypes": [
+                        "User"
+                    ],
+                    "context": {
+                        "type": "Record",
+                        "attributes": {}
+                    }
+                },
+                "memberOf": []
+            },
+            "Edit": {
+                "memberOf": [],
+                "appliesTo": {
+                    "resourceTypes": [
+                        "Order"
+                    ],
+                    "context": {
+                        "type": "Record",
+                        "attributes": {}
+                    },
+                    "principalTypes": [
+                        "User"
+                    ]
+                }
+            },
+            "Buy": {
+                "appliesTo": {
+                    "context": {
+                        "type": "Record",
+                        "attributes": {}
+                    },
+                    "resourceTypes": [
+                        "Product"
+                    ],
+                    "principalTypes": [
+                        "User"
+                    ]
+                },
+                "memberOf": []
+            },
+            "GetDiscount": {
+                "appliesTo": {
+                    "resourceTypes": [
+                        "Product"
+                    ],
+                    "context": {
+                        "attributes": {},
+                        "type": "Record"
+                    },
+                    "principalTypes": [
+                        "User"
+                    ]
+                },
+                "memberOf": []
+            },
+            "Preorder": {
+                "memberOf": [],
+                "appliesTo": {
+                    "context": {
+                        "type": "Record",
+                        "attributes": {}
+                    },
+                    "principalTypes": [
+                        "User"
+                    ],
+                    "resourceTypes": [
+                        "Product"
+                    ]
+                }
+            }
+        },
+        "entityTypes": {
+            "Product": {
+                "memberOfTypes": [],
+                "shape": {
+                    "type": "Record",
+                    "attributes": {}
+                }
+            },
+            "Role": {
+                "shape": {
+                    "attributes": {},
+                    "type": "Record"
+                },
+                "memberOfTypes": []
+            },
+            "User": {
+                "shape": {
+                    "type": "Record",
+                    "attributes": {
+                        "premiumMembership": {
+                            "type": "Boolean",
+                            "required": false
+                        }
+                    }
+                },
+                "memberOfTypes": [
+                    "Role"
+                ]
+            },
+            "Order": {
+                "shape": {
+                    "attributes": {
+                        "status": {
+                            "required": true,
+                            "type": "String"
+                        }
+                    },
+                    "type": "Record"
+                },
+                "memberOfTypes": []
+            }
+        }
+    }
+}

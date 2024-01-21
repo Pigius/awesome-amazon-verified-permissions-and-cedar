@@ -1,0 +1,187 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+
+Description: >
+  IaC for AVP
+
+Resources:
+  PolicyStore:
+    Type: AWS::VerifiedPermissions::PolicyStore
+    Properties:
+      Description: "Policy store for the Ecommerce with Batch Scenario"
+      ValidationSettings:
+        Mode: STRICT
+      Schema:
+        CedarJson: |
+          {
+            "EcommerceStore": {
+                "actions": {
+                    "View": {
+                        "appliesTo": {
+                            "resourceTypes": [
+                                "Product"
+                            ],
+                            "principalTypes": [
+                                "User"
+                            ],
+                            "context": {
+                                "type": "Record",
+                                "attributes": {}
+                            }
+                        },
+                        "memberOf": []
+                    },
+                    "Edit": {
+                        "memberOf": [],
+                        "appliesTo": {
+                            "resourceTypes": [
+                                "Order"
+                            ],
+                            "context": {
+                                "type": "Record",
+                                "attributes": {}
+                            },
+                            "principalTypes": [
+                                "User"
+                            ]
+                        }
+                    },
+                    "Buy": {
+                        "appliesTo": {
+                            "context": {
+                                "type": "Record",
+                                "attributes": {}
+                            },
+                            "resourceTypes": [
+                                "Product"
+                            ],
+                            "principalTypes": [
+                                "User"
+                            ]
+                        },
+                        "memberOf": []
+                    },
+                    "GetDiscount": {
+                        "appliesTo": {
+                            "resourceTypes": [
+                                "Product"
+                            ],
+                            "context": {
+                                "attributes": {},
+                                "type": "Record"
+                            },
+                            "principalTypes": [
+                                "User"
+                            ]
+                        },
+                        "memberOf": []
+                    },
+                    "Preorder": {
+                        "memberOf": [],
+                        "appliesTo": {
+                            "context": {
+                                "type": "Record",
+                                "attributes": {}
+                            },
+                            "principalTypes": [
+                                "User"
+                            ],
+                            "resourceTypes": [
+                                "Product"
+                            ]
+                        }
+                    }
+                },
+                "entityTypes": {
+                    "Product": {
+                        "memberOfTypes": [],
+                        "shape": {
+                            "type": "Record",
+                            "attributes": {}
+                        }
+                    },
+                    "Role": {
+                        "shape": {
+                            "attributes": {},
+                            "type": "Record"
+                        },
+                        "memberOfTypes": []
+                    },
+                    "User": {
+                        "shape": {
+                            "type": "Record",
+                            "attributes": {
+                                "premiumMembership": {
+                                    "type": "Boolean",
+                                    "required": false
+                                }
+                            }
+                        },
+                        "memberOfTypes": [
+                            "Role"
+                        ]
+                    },
+                    "Order": {
+                        "shape": {
+                            "attributes": {
+                                "status": {
+                                    "required": true,
+                                    "type": "String"
+                                }
+                            },
+                            "type": "Record"
+                        },
+                        "memberOfTypes": []
+                    }
+                }
+            }
+          }
+
+  AllowPolicy1:
+    Type: AWS::VerifiedPermissions::Policy
+    Properties:
+      PolicyStoreId: !Ref PolicyStore
+      Definition:
+        Static:
+          Description: "Allows admin to edit order if status is paid"
+          Statement: |
+            permit (
+                principal in EcommerceStore::Role::"admin",
+                action in [EcommerceStore::Action::"Edit"],
+                resource
+            )
+            when { resource.status == "paid" };
+  AllowPolicy2:
+    Type: AWS::VerifiedPermissions::Policy
+    Properties:
+      PolicyStoreId: !Ref PolicyStore
+      Definition:
+        Static:
+          Description: "Allows customer to buy and view products"
+          Statement: |
+            permit(
+              principal in EcommerceStore::Role::"customer",
+              action in [EcommerceStore::Action::"Buy",EcommerceStore::Action::"View"],
+              resource
+            );
+
+  AllowPolicy3:
+    Type: AWS::VerifiedPermissions::Policy
+    Properties:
+      PolicyStoreId: !Ref PolicyStore
+      Definition:
+        Static:
+          Description: "Allows customer with premiumMembership to Get Discount and to Preorder"
+          Statement: |
+            permit (
+                principal,
+                action in
+                    [EcommerceStore::Action::"GetDiscount",
+                    EcommerceStore::Action::"Preorder"],
+                resource
+            )
+            when { principal has premiumMembership && principal.premiumMembership == true };
+Outputs:
+  PolicyStoreId:
+    Description: "Identifier of the Amazon Verified Permissions policy store."
+    Value: !Ref PolicyStore

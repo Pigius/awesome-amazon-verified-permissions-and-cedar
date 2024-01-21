@@ -17,3 +17,7 @@ It presents an example of the [documents scenario](https://github.com/Pigius/avp
 - Review a stack, accept capabilities and deploy.
 
 - After couple of minutes everything will be deployed. In the resources tab, you can see 3 resources (AVP policy store, and 2 access policies), and in output section you will AVP policy store ID, which you can grab and check the resources in the AVP service.
+
+## Testing
+
+You can easily test the policy store with access policies using avp-cli. See the readme [here](https://github.com/Pigius/avp-cli?tab=readme-ov-file#testing-scenarios) for more information.
