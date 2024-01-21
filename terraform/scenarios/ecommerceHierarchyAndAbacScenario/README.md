@@ -1,8 +1,8 @@
-# The Most Basic AVP Usage with Terraform
+# Ecommerce with Hierarchy and ABAC Scenario
 
 ## Big picture behind
 
-This template shows an example of the [Ecommerce with Group Usage Scenario](https://github.com/Pigius/avp-cli/blob/main/scenarios/ecommerceGroupScenario/ecommerceGroupScenario.json) from AVP-CLI. It has been created for educational purposes on how to easily use AVP with IaC - Terraform.
+This template shows an example of the [Ecommerce with Hierarchy and ABAC Scenario](https://github.com/Pigius/avp-cli/blob/main/scenarios/ecommerceHierarchyAndAbacScenario/ecommerceHierarchyAndAbacScenario.json) from AVP-CLI. It has been created for educational purposes on how to easily use AVP with IaC - Terraform.
 
 To learn more about AVP with terraform feel free to read this [blogpost](https://dev.to/aws-builders/authorization-and-amazon-verified-permissions-a-new-way-to-manage-permissions-part-xii-terraform-598d).
 

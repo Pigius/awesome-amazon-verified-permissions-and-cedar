@@ -1,6 +1,10 @@
-# Documents Scenario
+# Ecommerce with Cognito Integration Scenario
 
-This is a minimal AVP with Terraform example. It includes a basic schema and two policies (one to allow access, and one to forbid access). It is derived from the [Documents scenario of the avp-cli](https://github.com/Pigius/avp-cli/tree/main/scenarios/documentsScenario).
+## Big picture behind
+
+This template shows an example of the [Ecommerce with Cognito Integration Scenario](https://github.com/Pigius/avp-cli/blob/main/scenarios/ecommerceCognitoIntegrationScenario/ecommerceCognitoIntegrationScenario.json) from AVP-CLI. It has been created for educational purposes on how to easily use AVP with IaC - Terraform.
+
+To learn more about AVP with terraform feel free to read this [blogpost](https://dev.to/aws-builders/authorization-and-amazon-verified-permissions-a-new-way-to-manage-permissions-part-xii-terraform-598d).
 
 The [Terraform AWS Cloud Control Provider](https://github.com/hashicorp/terraform-provider-awscc) has been used.
 
@@ -15,6 +19,10 @@ $ brew install terraform
 ```
 
 [terraform]: https://www.terraform.io/
+
+## Cognito user pool ARN and client ID
+
+Refer to the [blogpost](https://dev.to/aws-builders/authorization-and-amazon-verified-permissions-a-new-way-to-manage-permissions-part-viii-integration-with-cognito-pgb) for full explanation.
 
 ### AWS credentials
 

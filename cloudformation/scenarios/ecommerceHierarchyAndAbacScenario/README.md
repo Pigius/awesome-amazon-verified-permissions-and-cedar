@@ -1,4 +1,4 @@
-## Documents Scenario AVP
+## Ecommerce with Hierarchy and ABAC Scenario
 
 ## Big picture behind
 

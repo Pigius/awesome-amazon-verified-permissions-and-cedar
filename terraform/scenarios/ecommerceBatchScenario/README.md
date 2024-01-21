@@ -1,4 +1,4 @@
-# The Most Basic AVP Usage with Terraform
+# Ecommerce with Batch Scenario
 
 ## Big picture behind
 

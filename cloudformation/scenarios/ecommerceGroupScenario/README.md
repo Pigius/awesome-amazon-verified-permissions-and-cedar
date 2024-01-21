@@ -1,4 +1,4 @@
-## Documents Scenario AVP
+## Ecommerce with Group Usage Scenario
 
 ## Big picture behind
 

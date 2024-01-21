@@ -1,4 +1,4 @@
-## Documents Scenario AVP
+## Documents Scenario
 
 ## Big picture behind
 

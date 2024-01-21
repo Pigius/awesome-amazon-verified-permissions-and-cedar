@@ -1,4 +1,4 @@
-## Documents Scenario AVP
+## Ecommerce with Context usage Scenario
 
 ## Big picture behind
 

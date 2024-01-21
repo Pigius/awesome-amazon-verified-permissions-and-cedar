@@ -1,4 +1,4 @@
-## Documents Scenario AVP
+## Ecommerce with Batch Scenario
 
 ## Big picture behind
 

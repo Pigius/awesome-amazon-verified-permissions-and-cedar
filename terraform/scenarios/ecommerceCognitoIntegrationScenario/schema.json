@@ -1,0 +1,72 @@
+{
+    "MyEcommerceApp": {
+        "entityTypes": {
+            "Product": {
+                "shape": {
+                    "type": "Record",
+                    "attributes": {}
+                }
+            },
+            "Seller": {
+                "shape": {
+                    "type": "Record",
+                    "attributes": {
+                        "custom": {
+                            "attributes": {
+                                "discountPrivilege": {
+                                    "required": true,
+                                    "type": "String"
+                                }
+                            },
+                            "required": true,
+                            "type": "Record"
+                        }
+                    }
+                }
+            }
+        },
+        "actions": {
+            "Discount": {
+                "appliesTo": {
+                    "resourceTypes": [
+                        "Product"
+                    ],
+                    "principalTypes": [
+                        "Seller"
+                    ],
+                    "context": {
+                        "type": "SellerContext"
+                    }
+                }
+            },
+            "Read": {
+                "appliesTo": {
+                    "resourceTypes": [
+                        "Product"
+                    ],
+                    "context": {
+                        "type": "SellerContext"
+                    },
+                    "principalTypes": [
+                        "Seller"
+                    ]
+                }
+            }
+        },
+        "commonTypes": {
+            "SellerContext": {
+                "attributes": {
+                    "token": {
+                        "attributes": {
+                            "client_id": {
+                                "type": "String"
+                            }
+                        },
+                        "type": "Record"
+                    }
+                },
+                "type": "Record"
+            }
+        }
+    }
+}

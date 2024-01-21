@@ -1,10 +1,14 @@
-## Ecommerce with Policy Template Scenario
+## Documents Scenario AVP
 
 ## Big picture behind
 
-This template shows an example of the [Ecommerce with Policy Template Scenario](https://github.com/Pigius/avp-cli/blob/main/scenarios/ecommercePolicyTemplateScenario/ecommercePolicyTemplateScenario.json) from AVP-CLI. It has been created for educational purposes on how to easily use AVP with IaC - Cloudformation.
+This template shows an example of the [Ecommerce with Hierarchy and ABAC Scenario](https://github.com/Pigius/avp-cli/blob/main/scenarios/ecommerceHierarchyAndAbacScenario/ecommerceHierarchyAndAbacScenario.json) from AVP-CLI. It has been created for educational purposes on how to easily use AVP with IaC - Cloudformation.
 
 To learn how to create a Cloudformation template for AVP refer to this [blogpost](https://dev.to/aws-builders/authorization-and-amazon-verified-permissions-a-new-way-to-manage-permissions-part-xiii-cloudformation-47d2).
+
+## Cognito user pool ARN and client ID
+
+Refer to the [blogpost](https://dev.to/aws-builders/authorization-and-amazon-verified-permissions-a-new-way-to-manage-permissions-part-viii-integration-with-cognito-pgb) for full explanation.
 
 ## Usage
 
@@ -13,6 +17,8 @@ To learn how to create a Cloudformation template for AVP refer to this [blogpost
 - Use the `Template is ready` and then for `Template source` use the `Upload a template file` option.
 
 - Attach the `avp.yaml` file and then for `Stack name` create a name, you can leave the rest of the configuration unchanged.
+
+- You will need to pass parameters for Cognito user pool arn and client ID (the same User Pool)
 
 - Review a stack, accept capabilities and deploy.
 

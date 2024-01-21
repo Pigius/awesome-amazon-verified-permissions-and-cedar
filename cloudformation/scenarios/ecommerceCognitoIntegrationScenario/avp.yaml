@@ -1,0 +1,123 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Description: >
+  IaC for AVP
+
+Parameters:
+  UserPoolArn:
+    Type: String
+  ClientIds:
+    Type: List<String>
+
+Resources:
+  PolicyStore:
+    Type: AWS::VerifiedPermissions::PolicyStore
+    Properties:
+      Description: "Policy store for the Cognito Integration Scenario, created via Cloudformation"
+      ValidationSettings:
+        Mode: STRICT
+      Schema:
+        CedarJson: |
+          {
+              "MyEcommerceApp": {
+                  "entityTypes": {
+                      "Product": {
+                          "shape": {
+                              "type": "Record",
+                              "attributes": {}
+                          }
+                      },
+                      "Seller": {
+                          "shape": {
+                              "type": "Record",
+                              "attributes": {
+                                  "custom": {
+                                      "attributes": {
+                                          "discountPrivilege": {
+                                              "required": true,
+                                              "type": "String"
+                                          }
+                                      },
+                                      "required": true,
+                                      "type": "Record"
+                                  }
+                              }
+                          }
+                      }
+                  },
+                  "actions": {
+                      "Discount": {
+                          "appliesTo": {
+                              "resourceTypes": [
+                                  "Product"
+                              ],
+                              "principalTypes": [
+                                  "Seller"
+                              ],
+                              "context": {
+                                  "type": "SellerContext"
+                              }
+                          }
+                      },
+                      "Read": {
+                          "appliesTo": {
+                              "resourceTypes": [
+                                  "Product"
+                              ],
+                              "context": {
+                                  "type": "SellerContext"
+                              },
+                              "principalTypes": [
+                                  "Seller"
+                              ]
+                          }
+                      }
+                  },
+                  "commonTypes": {
+                      "SellerContext": {
+                          "attributes": {
+                              "token": {
+                                  "attributes": {
+                                      "client_id": {
+                                          "type": "String"
+                                      }
+                                  },
+                                  "type": "Record"
+                              }
+                          },
+                          "type": "Record"
+                      }
+                  }
+              }
+          }
+
+  AllowPolicy1:
+    Type: AWS::VerifiedPermissions::Policy
+    Properties:
+      PolicyStoreId: !Ref PolicyStore
+      Definition:
+        Static:
+          Description: "Allow sellers to discount if they have the agreed discount privilege."
+          Statement: |
+            permit(
+                principal,
+                action in [MyEcommerceApp::Action::"Discount"],
+                resource
+            ) when { 
+            principal.custom.discountPrivilege == "agreed" 
+            };
+
+  IdentitySource:
+    Type: AWS::VerifiedPermissions::IdentitySource
+    Properties:
+      PolicyStoreId: !Ref PolicyStore
+      Configuration:
+        CognitoUserPoolConfiguration:
+          UserPoolArn: !Ref UserPoolArn
+          ClientIds: !Ref ClientIds
+      PrincipalEntityType: "MyEcommerceApp::Seller"
+
+Outputs:
+  PolicyStoreId:
+    Description: "Identifier of the Amazon Verified Permissions policy store."
+    Value: !Ref PolicyStore
