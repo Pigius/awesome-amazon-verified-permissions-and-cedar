@@ -4,7 +4,7 @@
 
 This example was created for this [blogpost](https://dev.to/aws-builders/authorization-and-amazon-verified-permissions-a-new-way-to-manage-permissions-part-xiii-cloudformation-47d2) Refer to it for the further explanation.
 
-It presents an example of a scenario from AVP-CLI, but in the form of a cloudformation template. It has been created for educational purposes on how to easily use AVP with IaC - Cloudformation.
+It presents an example of the [documents scenario](https://github.com/Pigius/avp-cli/blob/main/scenarios/documentsScenario/documentsScenario.json) from AVP-CLI, but in the form of a cloudformation template. It has been created for educational purposes on how to easily use AVP with IaC - Cloudformation.
 
 ## Usage
 
