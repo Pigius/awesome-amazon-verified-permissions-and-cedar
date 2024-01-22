@@ -107,6 +107,15 @@ If you're just beginning with Amazon Verified Permissions, these resources will 
 
 ...
 
+### Podcasts
+
+| Link                                                                                                                                                                                        | Description                                                                                                                                                                                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Episode 105 – AWS Identity with Kevin Shanley and Victor Moreno Spotify](https://open.spotify.com/episode/7wo5i9iCCtWd4A7vzHuQNw)                                                          | Getting Started with AWS: Perfect for newcomers! Our guests share tips and tricks for beginners. Verified Permissions: Understand how AWS ensures secure and verified access. Practical Insights: Real-world applications and advice directly from the experts at AWS.  |
+| [Episode 105 – AWS Identity with Kevin Shanley and Victor Moreno Apple](https://podcasts.apple.com/us/podcast/episode-105-aws-identify-with-kevin-shanley-and/id1574162669?i=1000638745595) | AGetting Started with AWS: Perfect for newcomers! Our guests share tips and tricks for beginners. Verified Permissions: Understand how AWS ensures secure and verified access. Practical Insights: Real-world applications and advice directly from the experts at AWS. |
+
+...
+
 ## Cedar
 
 Cedar is the policy language used within AVP for crafting fine-grained, attribute-based access control policies. Find official documentation, in-depth tutorials, and other resources to help you become proficient with Cedar.
