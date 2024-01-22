@@ -136,9 +136,10 @@ Below is a list of resources created by the Community.
 
 ### Blogposts
 
-| Link                                                                                                                                                    | Description                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| [Series of blog posts from Daniel on dev.to about AVP](https://dev.to/aws-builders/authorization-and-cedar-a-new-way-to-manage-permissions-part-i-1nid) | Multiple blogposts about AVP/Cedar. Full of explanations, tutorials, examples, blueprints. |
+| Link                                                                                                                                                                                  | Description                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| [Series of blog posts from Daniel on dev.to about AVP](https://dev.to/aws-builders/authorization-and-cedar-a-new-way-to-manage-permissions-part-i-1nid)                               | Multiple blogposts about AVP/Cedar. Full of explanations, tutorials, examples, blueprints.                           |
+| [Fine-grained Authorization in OutSystems with Amazon Verified Permissions](https://itnext.io/fine-grained-authorization-in-outsystems-with-amazon-verified-permissions-2e664cbe873b) | An article on integrating fine-grained authorization into OutSystems applications using Amazon Verified Permissions. |
 
 ...
 
