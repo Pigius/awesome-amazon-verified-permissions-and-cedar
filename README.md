@@ -1,6 +1,6 @@
-# AVP Resources
+# Awesome Amazon Verified Permissions And Cedar
 
-Welcome to the `avp-resources` repository, the central hub for learning, using, and mastering Amazon Verified Permissions (AVP) and Cedar. This repository serves as a collective resource for developers, architects, and anyone interested in permissions management across AWS resources.
+Welcome to the `awesome-amazon-verified-permissions-and-cedar` repository, the central hub for learning, using, and mastering Amazon Verified Permissions (AVP) and Cedar. This repository serves as a collective resource for developers, architects, and anyone interested in permissions management across AWS resources.
 
 ## Repository Goals
 
@@ -175,7 +175,7 @@ If you're just beginning with Amazon Verified Permissions, these resources will 
 
 ## Contributing
 
-Contributions are what make the open-source community an amazing place to learn, inspire, and create. Any contributions you make to the `avp-resources` repository are **greatly appreciated**.
+Contributions are what make the open-source community an amazing place to learn, inspire, and create. Any contributions you make to the `awesome-amazon-verified-permissions-and-cedar` repository are **greatly appreciated**.
 
 If you have a suggestion that would make this repository better, have additional resources to share, or want to contribute your own insights or materials, please don't hesitate to:
 
