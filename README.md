@@ -109,10 +109,10 @@ If you're just beginning with Amazon Verified Permissions, these resources will 
 
 ### Podcasts
 
-| Link                                                                                                                                                                                        | Description                                                                                                                                                                                                                                                             |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Episode 105 – AWS Identity with Kevin Shanley and Victor Moreno Spotify](https://open.spotify.com/episode/7wo5i9iCCtWd4A7vzHuQNw)                                                          | Getting Started with AWS: Perfect for newcomers! Our guests share tips and tricks for beginners. Verified Permissions: Understand how AWS ensures secure and verified access. Practical Insights: Real-world applications and advice directly from the experts at AWS.  |
-| [Episode 105 – AWS Identity with Kevin Shanley and Victor Moreno Apple](https://podcasts.apple.com/us/podcast/episode-105-aws-identify-with-kevin-shanley-and/id1574162669?i=1000638745595) | AGetting Started with AWS: Perfect for newcomers! Our guests share tips and tricks for beginners. Verified Permissions: Understand how AWS ensures secure and verified access. Practical Insights: Real-world applications and advice directly from the experts at AWS. |
+| Link                                                                                                                                                                                        | Description                                                                                                                                                                                                                                                                                                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Episode 105 – AWS Identity with Kevin Shanley and Victor Moreno Spotify](https://open.spotify.com/episode/7wo5i9iCCtWd4A7vzHuQNw)                                                          | Join Brooke and Dave in this exciting episode of our podcast as we delve into the intricate world of cloud security and access control with AWS. We're thrilled to have two distinguished guests from AWS - Victor Moreno, Sr. Software Engineer, and Kevin Shanley, Principle for Identity - who are here to unravel the complexities of authorization and identity management in the AWS cloud. |
+| [Episode 105 – AWS Identity with Kevin Shanley and Victor Moreno Apple](https://podcasts.apple.com/us/podcast/episode-105-aws-identify-with-kevin-shanley-and/id1574162669?i=1000638745595) | Join Brooke and Dave in this exciting episode of our podcast as we delve into the intricate world of cloud security and access control with AWS. We're thrilled to have two distinguished guests from AWS - Victor Moreno, Sr. Software Engineer, and Kevin Shanley, Principle for Identity - who are here to unravel the complexities of authorization and identity management in the AWS cloud. |
 
 ...
 
@@ -181,10 +181,6 @@ If you're just beginning with Amazon Verified Permissions, these resources will 
 |                                                        |
 
 ...
-
-## Infrastructure as Code
-
-Refer to folders `cloudformation` and `terraform` for examples.
 
 ## Contributing
 
