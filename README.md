@@ -149,8 +149,7 @@ Below is a list of resources created by the Community.
 | [AVP-CLI](https://github.com/Pigius/avp-cli) | Tool for easing out the start with Amazon Verified Permissions (and Cedar) |
 
 Supports all actions available in Amazon Verified Permissions
-Predefined blueprints with tests for different authorization scenarios that can be deployed to AWS
-|
+Predefined blueprints with tests for different authorization scenarios that can be deployed to AWS
 
 ...
 
