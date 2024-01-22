@@ -83,7 +83,7 @@ Resources:
       PolicyStoreId: !Ref PolicyStore
       Definition:
         TemplateLinked:
-          PolicyTemplateId: !Ref PolicyTemplate
+          PolicyTemplateId: !GetAtt PolicyTemplate.PolicyTemplateId
           Principal:
             EntityType: "EcommercePlatform::Seller"
             EntityId: "123"
