@@ -138,7 +138,7 @@ Below is a list of resources created by the Community.
 
 | Link                                                                                                                                                    | Description                                                                                |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| [Series of blog posts from Daniel on dev.to about AVP](https://dev.to/aws-builders/authorization-and-cedar-a-new-way-to-manage-permissions-part-i-1nid) | Multiple blogposts about AVP/Cedar. Full of explanations, tutorials, examples, blueprints. |
+| [Series of blog posts from Daniel on dev.to about AVP](https://dev.to/aws-builders/authorization-and-cedar-a-new-way-to-manage-permissions-part-i-1nid) | Multiple blogposts about AVP/Cedar. Full of explanations, tutorials, examples, blueprints. |
 
 ...
 
