@@ -173,6 +173,10 @@ If you're just beginning with Amazon Verified Permissions, these resources will 
 
 ...
 
+## Infrastructure as Code
+
+Refer to folders `cloudformation` and `terraform` for examples.
+
 ## Contributing
 
 Contributions are what make the open-source community an amazing place to learn, inspire, and create. Any contributions you make to the `awesome-amazon-verified-permissions-and-cedar` repository are **greatly appreciated**.
