@@ -121,6 +121,8 @@ If you're just beginning with Amazon Verified Permissions, these resources will 
 
 Cedar is the policy language used within AVP for crafting fine-grained, attribute-based access control policies. Find official documentation, in-depth tutorials, and other resources to help you become proficient with Cedar.
 
+### Blogposts
+
 | Link                                                                                                                                                                                  | Description                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | [Cedar Language Official Documentation](https://docs.cedarpolicy.com/)                                                                                                                | Comprehensive documentation covering the specifics of Cedar language specifications.           |
@@ -135,6 +137,16 @@ Cedar is the policy language used within AVP for crafting fine-grained, attribut
 | [Automating Cedar Policy Validation](https://aws.amazon.com/blogs/security/automate-cedar-policy-validation-with-aws-developer-tools/)                                                | Learn how to automate the validation of your Cedar policies using AWS Developer Tools.         |
 | [Design Philosophy of Cedar](https://aws.amazon.com/blogs/security/how-we-designed-cedar-to-be-intuitive-to-use-fast-and-safe/)                                                       | Insight into the design principles that make Cedar intuitive, fast, and secure.                |
 | [Cedar security](https://docs.cedarpolicy.com/other/security.html)                                                                                                                    | information about security as it relates to the Cedar policy language                          |
+
+...
+
+### Videos
+
+If you're just beginning with Cedar, these resources will provide the foundational knowledge and steps to get started quickly.
+
+| Link                                                                                   | Description                                                                                        |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| [Lean Together 2024: Emina Torlak, Cedar](https://www.youtube.com/watch?v=KC6rlcsHUVs) | Join session about Cedar; a new language for expressive, fast, safe, and analyzable authorization. |
 
 ...
 
