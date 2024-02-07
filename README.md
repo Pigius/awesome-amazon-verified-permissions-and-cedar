@@ -117,6 +117,15 @@ If you're just beginning with Amazon Verified Permissions, these resources will 
 
 ...
 
+### CDK
+
+Cloud Development Kit for AVP:
+| Link | Description |
+| -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Amazon Verified Permissions Typescript L2 CDK Construct](https://github.com/cdklabs/cdk-verified-permissions) | Amazon Verified Permissions L2 CDK Construct written in Typescript. Constructs have been published on [ConstructHub](https://constructs.dev/packages/@cdklabs/cdk-verified-permissions/v/0.0.1-alpha.1?lang=typescript) |
+
+|
+
 ## Cedar
 
 Cedar is the policy language used within AVP for crafting fine-grained, attribute-based access control policies. Find official documentation, in-depth tutorials, and other resources to help you become proficient with Cedar.
