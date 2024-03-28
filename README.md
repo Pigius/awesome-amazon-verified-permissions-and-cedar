@@ -101,6 +101,18 @@ Developers can utilize various language-specific SDKs or the AWS CLI to programm
 
 If you're just beginning with Amazon Verified Permissions, these resources will provide the foundational knowledge and steps to get started quickly.
 
+### Verified Permissions Video Primer
+
+In response to the swift adoption of Amazon Verified Permissions and Cedar, AWS has created a video primer series to assist customers in developing their Application Policy Model, creating a Cedar schema, and writing and testing policies. This series is an invaluable resource for those starting with Amazon Verified Permissions.
+
+| Title                                                                                | Description                                                                                                    | Link                                                      |
+| ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| Verified Permissions Video Primer #1 (Create an Application Policy Model)            | A guide to creating an Application Policy Model for use with Amazon Verified Permissions.                      | [Watch Here](https://www.youtube.com/watch?v=xNpcpzq3XPM) |
+| Verified Permissions Video Primer #2 (Create an Application Schema)                  | Instructions on how to develop a schema for your application that integrates with Amazon Verified Permissions. | [Watch Here](https://www.youtube.com/watch?v=LNcEe1xmKCg) |
+| Verified Permissions Video Primer #3 (Create and Test Policies for your Application) | Step-by-step guidance on writing and testing policies for your application using Amazon Verified Permissions.  | [Watch Here](https://www.youtube.com/watch?v=Gi3joEySMPQ) |
+
+### Videos
+
 | Link                                                                                                                                                | Description                                                                                                                                                                                                                                                                                                                                         |
 | --------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [AWS re:Invent 2022 - [NEW] Use policies to manage permissions w/Amazon Verified Permissions (SEC335)](https://www.youtube.com/watch?v=k6pPcnLuOXY) | Join us in this session to learn how policy-based permissions can be applied to your applications using Amazon Verified Permissions, and discover how this fits into the end-to-end journey of application authentication, authorization, and fine-grained access control.                                                                          |
