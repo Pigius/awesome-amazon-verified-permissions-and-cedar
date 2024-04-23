@@ -81,9 +81,10 @@ Developers can utilize various language-specific SDKs or the AWS CLI to programm
 
 ### Workshop
 
-| Link                                                                                                    | Description                                                 |
-| ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| [Verified Permissions in Action Workshop](https://catalog.workshops.aws/verified-permissions-in-action) | An official workshop to get practical experience using AVP. |
+| Link                                                                                                                                                  | Description                                                             |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| [Verified Permissions in Action Workshop](https://catalog.workshops.aws/verified-permissions-in-action)                                               | An official workshop to get practical experience using AVP.             |
+| [Amazon Verified Permissions Quick Start workshop](https://catalog.us-east-1.prod.workshops.aws/workshops/e25284b6-851c-4a89-bee1-ed7571787895/en-US) | An official workshop to get practical experience using Quick Start AVP. |
 
 ...
 
