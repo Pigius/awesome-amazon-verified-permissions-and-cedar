@@ -1,0 +1,118 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: AWS API Gateway with POST Integrations
+
+Resources:
+  ApiGatewayRestApi:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      ApiKeySourceType: HEADER
+      Description: An API Gateway for Loan Management
+      EndpointConfiguration:
+        Types:
+          - EDGE
+      Name: loan_api
+
+  # Base resource for /loan
+  ApiGatewayResourceLoan:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId: !GetAtt ApiGatewayRestApi.RootResourceId
+      PathPart: "loan"
+      RestApiId: !Ref ApiGatewayRestApi
+
+  # Resource for /loan/approve/{loan_id}
+  ApiGatewayResourceLoanApprove:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId: !Ref ApiGatewayResourceLoan
+      PathPart: "approve"
+      RestApiId: !Ref ApiGatewayRestApi
+
+  ApiGatewayResourceLoanApproveId:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId: !Ref ApiGatewayResourceLoanApprove
+      PathPart: "{loan_id}"
+      RestApiId: !Ref ApiGatewayRestApi
+
+  # POST method for /loan
+  ApiGatewayMethodLoanPost:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      ApiKeyRequired: false
+      AuthorizationType: NONE
+      HttpMethod: POST
+      ResourceId: !Ref ApiGatewayResourceLoan
+      RestApiId: !Ref ApiGatewayRestApi
+      Integration:
+        ConnectionType: INTERNET
+        IntegrationResponses:
+          - StatusCode: 200
+            ResponseTemplates:
+              application/json: '{"message": "Loan created"}'
+          - StatusCode: 500
+            ResponseTemplates:
+              application/json: '{"message": "Internal Server Error"}'
+        PassthroughBehavior: WHEN_NO_TEMPLATES
+        Type: MOCK
+        TimeoutInMillis: 29000
+      MethodResponses:
+        - StatusCode: 200
+          ResponseModels:
+            application/json: !Ref ApiGatewayModel
+        - StatusCode: 500
+          ResponseModels:
+            application/json: !Ref ApiGatewayModel
+
+  # POST method for /loan/approve/{loan_id}
+  ApiGatewayMethodLoanApprovePost:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      ApiKeyRequired: false
+      AuthorizationType: NONE
+      HttpMethod: POST
+      ResourceId: !Ref ApiGatewayResourceLoanApproveId
+      RestApiId: !Ref ApiGatewayRestApi
+      Integration:
+        ConnectionType: INTERNET
+        IntegrationResponses:
+          - StatusCode: 200
+            ResponseTemplates:
+              application/json: '{"message": "Loan approved"}'
+          - StatusCode: 500
+            ResponseTemplates:
+              application/json: '{"message": "Internal Server Error during approval"}'
+        PassthroughBehavior: WHEN_NO_TEMPLATES
+        Type: MOCK
+        TimeoutInMillis: 29000
+      MethodResponses:
+        - StatusCode: 200
+          ResponseModels:
+            application/json: !Ref ApiGatewayModel
+        - StatusCode: 500
+          ResponseModels:
+            application/json: !Ref ApiGatewayModel
+
+  ApiGatewayModel:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      ContentType: "application/json"
+      RestApiId: !Ref ApiGatewayRestApi
+      Schema: {}
+
+  ApiGatewayStage:
+    Type: AWS::ApiGateway::Stage
+    Properties:
+      DeploymentId: !Ref ApiGatewayDeployment
+      Description: Loan API Stage
+      RestApiId: !Ref ApiGatewayRestApi
+      StageName: "v0"
+
+  ApiGatewayDeployment:
+    Type: AWS::ApiGateway::Deployment
+    DependsOn:
+      - ApiGatewayMethodLoanPost
+      - ApiGatewayMethodLoanApprovePost
+    Properties:
+      Description: Deployment for Loan Management API
+      RestApiId: !Ref ApiGatewayRestApi

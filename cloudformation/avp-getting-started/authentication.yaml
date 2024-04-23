@@ -1,0 +1,58 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+
+Description: >
+  Infrastructure as code for authentication layer (Amazon Cognito).
+
+Resources:
+  CognitoUserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName: !Sub ${AWS::StackName}-UserPool
+      AutoVerifiedAttributes:
+        - email
+      Schema:
+        - Name: email
+          AttributeDataType: String
+          Mutable: false
+          Required: true
+
+  UserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      ClientName: avp-client
+      GenerateSecret: false
+      UserPoolId: !Ref CognitoUserPool
+      ExplicitAuthFlows:
+        - ALLOW_ADMIN_USER_PASSWORD_AUTH
+        - ALLOW_REFRESH_TOKEN_AUTH
+        - ALLOW_USER_PASSWORD_AUTH
+
+  LoanCreatorsGroup:
+    Type: AWS::Cognito::UserPoolGroup
+    Properties:
+      GroupName: loan_creators
+      Description: "Group for users with the permissions to create loans."
+      UserPoolId: !Ref CognitoUserPool
+      Precedence: 1
+
+  LoanOfficersGroup:
+    Type: AWS::Cognito::UserPoolGroup
+    Properties:
+      GroupName: loan_officers
+      Description: "Group for users with the permissions to review and approve loans."
+      UserPoolId: !Ref CognitoUserPool
+      Precedence: 2
+
+Outputs:
+  CognitoUserPoolId:
+    Description: "Amazon Cognito User Pool ID"
+    Value: !Ref CognitoUserPool
+    Export:
+      Name: !Sub "${AWS::StackName}-UserPoolID"
+
+  CognitoAppClientId:
+    Description: "Amazon Cognito App Client ID"
+    Value: !Ref UserPoolClient
+    Export:
+      Name: !Sub "${AWS::StackName}-UserPoolClientID"
